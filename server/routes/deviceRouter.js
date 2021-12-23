@@ -1,13 +1,13 @@
 const Router = require('express')
-
+const DeviceController = require('../controllers/deviceController')
 const router = new Router()
 
 
 
-router.post('/',)
-router.get('/',)
-router.delete('/',)
-router.get('/:id',)
+router.post('/', DeviceController.create)
+router.get('/', DeviceController.getAll)
+router.delete('/', DeviceController.delete)
+router.get('/:id', DeviceController.getOne)
 
 
 
