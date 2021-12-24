@@ -1,4 +1,3 @@
-require("dotenv").config()
 const ApiError = require('../error/ApiError')
 const { User, Basket } = require('../models/models')
 const bcrypt = require('bcrypt')
