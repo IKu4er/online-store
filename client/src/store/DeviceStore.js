@@ -4,7 +4,9 @@ export default class DeviceStore {
     constructor() {
         this._types = [
             { id: 1, name: 'Fridge' },
-            { id: 2, name: 'Smartphone' }
+            { id: 2, name: 'Smartphone' },
+            { id: 3, name: 'Notebook' },
+            { id: 4, name: 'TV' }
         ]
         this._brands = [
             { id: 1, name: 'Samsung' },
@@ -17,6 +19,8 @@ export default class DeviceStore {
             { id: 4, name: 'Iphone 12', price: 2500, rating: 5, img: 'https://images.radiokp.ru/sites/default/files/styles/kp_fullnode_730_486/public/2021-01/1-laptop-qoav8r7u-2_0.jpg?itok=G5hVfN2f' },
             { id: 5, name: 'Iphone 12', price: 2500, rating: 5, img: 'https://images.radiokp.ru/sites/default/files/styles/kp_fullnode_730_486/public/2021-01/1-laptop-qoav8r7u-2_0.jpg?itok=G5hVfN2f' }
         ]
+        this._selectedType = {}
+        this._selectedBrand = {}
         makeAutoObservable(this)
     }
 
@@ -32,6 +36,14 @@ export default class DeviceStore {
         this._devices = devices
     }
 
+    setSelectedType(type) {
+        return this._selectedType = type
+    }
+
+    setSelectedBrand(brand) {
+        return this._selectedBrand = brand
+    }
+
     get types() {
         return this._types
     }
@@ -42,5 +54,13 @@ export default class DeviceStore {
 
     get devices() {
         return this._devices
+    }
+
+    get selectedType() {
+        return this._selectedType
+    }
+
+    get selectedBrand() {
+        return this._selectedBrand
     }
 }
