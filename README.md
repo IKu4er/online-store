@@ -2,32 +2,32 @@
 
 ## Description
 
-The project consists in the fact that we will enter into the database information about the products that are in our online store, after which the site will show a page with information about the product (price, quantity of goods, etc.)
+Casual online store that sells different appliances
 
 ## Main features:
-
-- Search on the site, so that it would be easier to find the desired product
-- Choosing from the subject of the items that we need
-- Cart where products are added
+- Filters by type and brand of the device
+- Choosing from the subject of the items that we need | 
+- Cart where products are added | not finished yet
 - JWT authorization
 - Admin pannel
-- Logger of all actions
-- Contacts and Help
 
 ## Technologies:
 
 ### Front-end:
 
 - React
-- Bootstrap (React bootstrap)
-- HTML + CSS
+- React-router-dom for navigation
+- MobX for state management
+- Axios for requests to the server
+- React bootstrap)
 
 ### Backend:
 
-- Express || Nest.js
-- MySQL
+- Node.js
+- Express
+- Postgres
+- Sequelize
 
-### Additional programs:
+## ER model of the database:
 
-- Figma
-- Postman
+![изображение](https://user-images.githubusercontent.com/54377710/147384276-1196fecb-2d30-4a21-b6bf-ac113663acc7.png)
