@@ -8,22 +8,29 @@ import { Button } from "react-bootstrap";
 import { observer } from "mobx-react-lite";
 import Container from "react-bootstrap/Container";
 import { useHistory } from 'react-router-dom'
+
+
 const NavBar = observer(() => {
     const { user } = useContext(Context)
     const history = useHistory()
-
     const logOut = () => {
         user.setUser({})
         user.setIsAuth(false)
+        user.setRole("GUEST")
     }
+    console.log(user)
 
     return (
         <Navbar bg="dark" variant="dark">
             <Container>
-                <NavLink style={{ color: 'white' }} to={SHOP_ROUTE}>КупиДевайс</NavLink>
+                <NavLink style={{ color: 'white' }} to={SHOP_ROUTE}>MyShop</NavLink>
                 {user.isAuth ?
                     <Nav className="ml-auto" style={{ color: 'white' }}>
+                        {
+                            console.log(user.role)
+                        }
                         <Button
+                            style={{ display: user.role == "USER" ? 'none' : 'block' }}
                             variant={"outline-light"}
                             onClick={() => history.push(ADMIN_ROUTE)}
                         >
@@ -38,12 +45,14 @@ const NavBar = observer(() => {
                         </Button>
                     </Nav>
                     :
-                    <Nav className="ml-auto" style={{ color: 'white' }}>
+                    < Nav className="ml-auto" style={{ color: 'white' }}>
                         <Button variant={"outline-light"} onClick={() => history.push(LOGIN_ROUTE)}>Авторизация</Button>
                     </Nav>
+
+
                 }
             </Container>
-        </Navbar>
+        </Navbar >
 
     );
 });
